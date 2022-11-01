@@ -1,0 +1,240 @@
+<!-- <label for="btn" class="menu">
+<span>Menu</span>
+</label>
+<input type="checkbox"  id="btn"> -->
+<!-- <li>
+<label for="btn-1" class="show">Categories +</label>
+<a href="#">Categories</a> 
+<input type="checkbox" id="btn-1">   
+<ul> <!--Categories -->
+<!-- <li><a href="#">Recommendation</a></li>
+<li><a href="#">Fights</a></li>
+<li><a href="#">Wallpapers</a></li>
+<li><a href="#">Soundtracks</a></li> -->
+<!-- </ul>
+</li> -->
+
+
+CSS
+
+
+.dropdown{
+    margin: 0 auto;
+}
+
+nav{
+    background-color: black;
+    height: 70px;
+}
+
+.logo{
+    padding: 10px 0 0 60px;
+    width: 120px;
+    height: auto;
+}
+
+nav:after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav ul{
+    float:right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+
+nav ul li{
+    float:left;
+    display:inline-table;
+    background:black;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+
+nav ul ul {
+    position: absolute;
+    top: 90px;
+    border-top: 3px solid cyan;
+    border-bottom: 3px solid cyan;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s;
+}
+
+nav ul li:hover > ul{
+    top:70px;
+    opacity: 1;
+    visibility: visible;
+    
+}
+
+nav ul ul li{
+    position:relative;
+    margin: 0px;
+    width: 150px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0,0,0,0.3)
+}
+
+nav ul ul li a{
+    line-height: 50px;
+}
+
+nav ul li a:hover {
+    box-shadow: 0 0 5px #33ffff,
+                0 0 5px #66ffff;
+    border-radius: 5px;
+    color: red;
+}
+
+nav ul ul li a:hover{
+    color:red;
+    box-shadow: none;
+}
+
+.show,.menu,input{
+    display: none;
+}
+
+@media all and (max-width: 965px){
+     nav ul{ 
+        margin-right: 0px;
+        float: left;
+    }
+    nav .logo{
+        padding-left: 60px;
+        float:left;
+    }
+    nav ul li, nav ul ul li {
+        display: block;
+        width: 100%;
+        
+    }
+     nav ul ul, label{ 
+        top: 30px;
+        position: static;
+        float: none;
+        opacity: 1;
+        visibility: visible;
+        padding-left: 15px;
+    } 
+
+    .show{
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 0 15px;
+        line-height: 70px;
+        cursor: pointer;
+    } 
+    .show:hover{
+        color:red;
+    } 
+    .menu{
+        display: block;
+        color: white;
+        position: absolute;
+        right: 20px;
+        line-height: 10px;
+        font-size: 18px
+    }
+
+    .menu:hover{
+        color:red;
+    }  
+
+    .show + a,ul{
+        display: none;
+    }
+
+    [id^=btn]:checked + ul{
+        display: block;
+    }
+    
+} 
+
+.box{
+    max-width: 320px;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.box .search-box{
+    position: relative;
+    height: 50px;
+    max-width: 70px;
+    background-color: black;
+    margin: auto;
+    box-shadow:2px 1px 2px 1px blueviolet;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+#check:checked ~ .search-box {
+    max-width: 320px;
+}
+.search-box input{
+    position: absolute;
+    height: 50px;
+    width: 320px;
+    border-radius: 25px;
+    background:black;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 15px;
+    color: white;
+}
+
+.search-box .icon{
+    float: right;
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 50px;
+    background:black;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    border-radius:25px;
+}
+
+.icon{
+    padding: 15px;
+}
+
+.icon:hover{
+    background: blueviolet;
+}
+
+#check:checked ~ .search-box .icon{
+    background: blueviolet;
+    border-radius: 0 25px 25px 0;
+    width: 60px;
+}
+
+#check {
+    display: none;
+}
+
+<div class="box">
+            <input type="checkbox" id="check">
+            <div class="search-box">
+                <input type="text" placeholder="Type here...">
+                <label for="check" class="icon">
+                    <i class="fas fa-search"></i>
+                </label>
+            </div>
+        </div>
